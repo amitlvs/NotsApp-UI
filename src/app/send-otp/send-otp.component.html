@@ -1,0 +1,36 @@
+<div class="loginForms" style="background-color: #111b21;">
+    <div class="loginForm" style="background-color: white;">
+        <div class="col-12 mt-5 bgWhite">
+            <div class="title mb-4">Enter Mobile Number</div>
+            <form class="justify-content-center needs-validation" [formGroup]="loginForm"
+                (ngSubmit)="onLogin()" novalidate>
+                <input class="otp" minlength="1" maxlength="1"  id="ph1" name="ph1" type="text" (keydown)="tabChange(1)" formControlName="ph1" (paste)=pasteValue($event,0) pattern="[0-9]+"
+                    required>
+                <input id="ph2"minlength="1" maxlength="1" name="ph2" class="otp" type="text" (keydown)="tabChange(2)" formControlName="ph2"(paste)=pasteValue($event,0) pattern="[0-9]"
+                    required>
+                <input id="ph3" minlength="1" maxlength="1" name="ph3" class="otp" type="text" (keydown)="tabChange(3)" formControlName="ph3"(paste)=pasteValue($event,0) pattern="[0-9]"
+                    required>
+                <input id="ph4" minlength="1" maxlength="1" name="ph4" class="otp" type="text" (keydown)="tabChange(4)" formControlName="ph4"(paste)=pasteValue($event,0)
+                    required>
+                <input id="ph5" minlength="1" maxlength="1" name="ph5" class="otp" type="text" (keydown)="tabChange(5)" formControlName="ph5"(paste)=pasteValue($event,0)
+                    required>
+                <input id="ph6" minlength="1" maxlength="1" name="ph6" class="otp" type="text" (keydown)="tabChange(6)" formControlName="ph6"(paste)=pasteValue($event,0)
+                    required>
+                <input id="ph7" minlength="1" maxlength="1" name="ph7" class="otp" type="text" (keydown)="tabChange(7)" formControlName="ph7"(paste)=pasteValue($event,0)
+                    required>
+                <input id="ph8"minlength="1" maxlength="1" name="ph8" class="otp" type="text" (keydown)="tabChange(8)" formControlName="ph8"(paste)=pasteValue($event,0)
+                    required>
+                <input id="ph9" minlength="1" maxlength="1" name="ph9" class="otp" type="text" (keydown)="tabChange(9)" formControlName="ph9"(paste)=pasteValue($event,0)
+                    required>
+                <input id="ph10" minlength="1" maxlength="1" name="ph10" class="otp" type="text" (keydown)="tabChange(10)" formControlName="ph10"(paste)=pasteValue($event,0)
+                    required>
+
+                <hr class="mt-4" />
+                <button class="btn btn-primary btn-block mt-4 mb-4 customBtn" value="{{btnText}}"
+                    type="submit">{{btnText}}</button>
+
+                <!-- <button type="submit" (click)="loginForm.hasError ? onLogin() :null">Submit</button> -->
+                <!--    (click)="onLogin()">{{btnText}}</input>  -->
+            </form>
+        </div>
+    </div>
