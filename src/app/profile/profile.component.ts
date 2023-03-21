@@ -1,6 +1,7 @@
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-
+import { PROFILE_DEFAULT, VERIFIED_ICON } from '../constants/image-constants';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -12,7 +13,9 @@ export class ProfileComponent implements OnInit {
   phoneNumber = '';
   userData: any;
   profileForm!: FormGroup;
-  constructor(private fb: FormBuilder) {
+  profileDefault: any = PROFILE_DEFAULT;
+  verifiedIcon = VERIFIED_ICON;
+  constructor(private fb: FormBuilder, private sanitizer: DomSanitizer) {
     this.profileForm = this.fb.group({
       userName: [''],
       status: [''],
@@ -20,12 +23,16 @@ export class ProfileComponent implements OnInit {
     });
   }
   handleUpload(e: any) {
+    console.log(e.target.files[0]);
+
     const file = e.target.files[0];
     const profile = URL.createObjectURL(file);
-    this.setProfile(profile);
+    // to sanitise the url if it's unsafe
+    let sanitizedUrl = this.sanitizer.bypassSecurityTrustUrl(profile);
+    this.profileDefault = sanitizedUrl;
   }
-  setProfile(p: any) {
-    return p;
+  setProfile() {
+    this.profileDefault = PROFILE_DEFAULT;
   }
   ngOnInit(): void {
     let data = localStorage.getItem('userData');

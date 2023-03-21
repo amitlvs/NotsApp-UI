@@ -39,21 +39,27 @@ text-align: center;" class="d-flex">
         <div class="col-md-6">
             <div class="card p-3 row">
                 <div class="profile-circle d-flex align-items-center justify-content-center">
-                    <img src={VERIFIED_ICON} />
-                    <img alt="profile pic" src="profile ? profile : PROFILE_DEFAULT" />
-                    <button type="button" class="btn trash-icon" (click)="setProfile('')"></button>
+                    <div class="row">
+                        <div class="col-6">
+                            <img [src]="verifiedIcon" />
+                            <!-- <h2>Amit Kumar</h2> -->
+                        </div>
+                        <div class="col-6">
+                            <img alt="profile pic" [src]="profileDefault" />
+                        </div>
+                    </div>
+                    <button type="button" class="btn trash-icon" (click)="setProfile()"></button>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <input type="file" id="profileImg" accept="image/*" style="display: none;"
                             (change)=handleUpload($event) />
                         <div class="upload-wrapper d-flex align-items-center justify-content-center">
-                            <label htmlFor="profileImg" class="btn upload-btn">
+                            <label for="profileImg" class="upload-btn">
                                 Click here to Upload image
                             </label>
                         </div>
                     </div>
-
                     <div class="col-md-12 mt-3">
                         <label>First Name</label>
                         <input type="text" class="form-control" name="firstname" maxLength={50} minLength={2} />
@@ -66,7 +72,8 @@ text-align: center;" class="d-flex">
 
                     <div class="col-md-12 mt-3">
                         <label>Mobile Number</label>
-                        <input type="text" class="form-control" name="mobile" maxLength="50" minLength="2" />
+                        <input type="text" disabled value="9777729450" class="form-control" name="mobile" maxLength="50"
+                            minLength="2" />
                     </div>
 
                     <div class="col-md-12 mt-3">
