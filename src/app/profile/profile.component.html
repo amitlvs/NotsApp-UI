@@ -1,4 +1,4 @@
-<div style="height:100vh;background: beige; justify-content: center;
+<!-- <div style="height:100vh;background: beige; justify-content: center;
 text-align: center;" class="d-flex">
     <div style="width:800px">
         <div style="height: 200px;">
@@ -32,4 +32,50 @@ text-align: center;" class="d-flex">
         </div>
     </div>
 
+</div> -->
+
+<div class="container dashboard-container d-flex align-items-center justify-content-center">
+    <div class="row w-100 d-flex align-items-center justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-3 row">
+                <div class="profile-circle d-flex align-items-center justify-content-center">
+                    <img src={VERIFIED_ICON} />
+                    <img alt="profile pic" src="profile ? profile : PROFILE_DEFAULT" />
+                    <button type="button" class="btn trash-icon" (click)="setProfile('')"></button>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="file" id="profileImg" accept="image/*" style="display: none;"
+                            (change)=handleUpload($event) />
+                        <div class="upload-wrapper d-flex align-items-center justify-content-center">
+                            <label htmlFor="profileImg" class="btn upload-btn">
+                                Click here to Upload image
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" name="firstname" maxLength={50} minLength={2} />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" name="lastname" maxLength="50" minLength="2" />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label>Mobile Number</label>
+                        <input type="text" class="form-control" name="mobile" maxLength="50" minLength="2" />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-primary w-25" type="button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
