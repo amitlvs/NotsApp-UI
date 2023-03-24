@@ -15,7 +15,5 @@
                 
 -Sample Images :                 
  <img width="1440" alt="send_otp_page" src="https://user-images.githubusercontent.com/85306285/227510739-a984a4a8-aa47-43c3-a724-062211f92171.png">
- <img width="1440" alt="verify_otp_page" src="https://github.com/amitlvs/NotsApp/blob/master/Screenshot%202023-03-24%20at%205.12.57%20PM.png">
- <img width="1440" alt="profile_page" src="https://github.com/amitlvs/NotsApp/blob/master/Screenshot%202023-03-24%20at%205.14.33%20PM.png">
-  
-
+ <img width="1440" alt="Screenshot 2023-03-24 at 5 21 50 PM" src="https://user-images.githubusercontent.com/85306285/227514062-e3862ccd-4caa-4483-955e-  0bba59d72e2b.png">
+ <img width="1440" alt="Screenshot 2023-03-24 at 5 21 33 PM" src="https://user-images.githubusercontent.com/85306285/227514023-79add9f1-5ab0-4ddd-bfe2-26ba3e4672f8.png">
