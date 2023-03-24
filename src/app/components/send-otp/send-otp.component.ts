@@ -1,10 +1,10 @@
-import { OtpServiceService } from '../../services/otp-service.service';
+import { OtpServiceService } from '../../../services/otp-service.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-main',
+  selector: 'notsapp-main',
   templateUrl: './send-otp.component.html',
   styleUrls: ['./send-otp.component.css'],
 })

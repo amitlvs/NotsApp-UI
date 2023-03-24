@@ -78,7 +78,7 @@ img {
   /* bottom: 10px; */
   /* right: -98px; */
   z-index: 1;
-  background: url(../../assets/images/delete-icon.png) no-repeat;
+  background: url(../../../assets/images/delete-icon.png) no-repeat;
   width: 32px;
   height: 32px;
 }

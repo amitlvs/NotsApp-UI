@@ -1,11 +1,14 @@
-import { environment } from './../../environments/environment.development';
+import { environment } from '../../../environments/environment.development';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { PROFILE_DEFAULT, VERIFIED_ICON } from '../constants/image-constants';
+import {
+  PROFILE_DEFAULT,
+  VERIFIED_ICON,
+} from '../../constants/image-constants';
 import { DomSanitizer } from '@angular/platform-browser';
 import AWSS3UploadAshClient from 'aws-s3-upload-ash';
 @Component({
-  selector: 'app-profile',
+  selector: 'notsapp-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
