@@ -1,0 +1,16 @@
+.navbar {
+  height: 70px;
+  background-color: #63cb77;
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  padding-left: 20px;
+  color: white;
+}
+.logo_text {
+  margin-left: 20px;
+}
+.profile-pic {
+  border-radius: 50%;
+  margin-right: 10px;
+}

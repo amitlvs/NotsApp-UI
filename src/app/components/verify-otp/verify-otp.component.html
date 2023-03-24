@@ -1,0 +1,19 @@
+<div class="loginForms" style="background-color: #111b21;">
+    <div class="loginForm" style="background-color: white;">
+        <div class="col-12 mt-5 bgWhite">
+            <div class="title mb-4">Verify Otp</div>
+            <form class=" justify-content-center" [formGroup]="verifyForm"
+                aria-required="true" (ngSubmit)="onVerify()" novalidate>
+                <input class="otp" type="text" (keyup)=tabChange(1) maxlength="1" formControlName="otp1" />
+                <input class="otp" type="text" (keyup)=tabChange(2) maxlength="1" formControlName="otp2" />
+                <input class="otp" type="text" (keyup)=tabChange(3) maxlength="1" formControlName="otp3" />
+                <input class="otp" type="text" (keyup)=tabChange(4) maxlength="1" formControlName="otp4" />
+                <input class="otp" type="text" (keyup)="tabChange(5)" maxlength="1" formControlName="otp5" />
+                <input class="otp" type="text" (keyup)=tabChange(6) maxlength="1" formControlName="otp6" />
+                <hr class="mt-4" />
+                <button class="btn btn-primary btn-block mt-4 mb-4 customBtn" value="{{btnText}}"
+                    type="submit">{{btnText}}</button>
+            </form>
+        </div>
+        </div>
+        </div>

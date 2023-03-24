@@ -1,0 +1,88 @@
+<!-- <div style="height:100vh;background: beige; justify-content: center;
+text-align: center;" class="d-flex">
+    <div style="width:800px">
+        <div style="height: 200px;">
+            <div class="circle">
+                <img class="profile-pic"
+                    src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+            </div>
+            <div class="p-image">
+                <i class="fa-solid fa-camera upload-button" (click)="uploadImage()"></i>
+                <input class="file-upload" type="file" accept="image/*" />
+            </div>
+            <h1>{{userName}} Amit Kumar</h1>
+        </div>
+        <div>
+            <form action="" style="height: 600px; flex-direction:column; align-items: center;" class="d-flex" [formGroup]="profileForm">
+                <div class="d-flex">
+                    <label for="username">Display Name</label> &nbsp;&nbsp;
+                    <input type="text" name="username" value="{{userName}}" id="username" formControlName="userName">
+                </div><br>
+                <div class="d-flex">
+                    <label for="emailid">Status</label> &nbsp;&nbsp;
+                    <input type="text" name="status" id="status" formControlName="status">
+                </div><br>
+                <div class="d-flex">
+                    <label for="usephNumberrname">Phone Number</label> &nbsp;&nbsp;
+                    <input type="text" name="phNumber" value="{{phoneNumber}}" id="phNumber" formControlName="phoneNumber">
+                    
+                </div><br><br>
+            <button class="btn btn-primary" (click)="logout()">Logout</button>
+            </form>
+        </div>
+    </div>
+
+</div> -->
+
+<div class="container dashboard-container d-flex align-items-center justify-content-center">
+    <div class="row w-100 d-flex align-items-center justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-3 row">
+                <div class="profile-circle d-flex align-items-center justify-content-center">
+                    <div class="row">
+                        <div class="col-6">
+                            <img [src]="verifiedIcon" />
+                            <!-- <h2>Amit Kumar</h2> -->
+                        </div>
+                        <div class="col-6">
+                            <img alt="profile pic" [src]="profileDefault" />
+                        </div>
+                    </div>
+                    <button type="button" class="btn trash-icon" (click)="setProfile()"></button>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="file" id="profileImg" accept="image/*" style="display: none;"
+                            (change)=handleUpload($event) />
+                        <div class="upload-wrapper d-flex align-items-center justify-content-center">
+                            <label for="profileImg" class="upload-btn">
+                                Click here to Upload image
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" name="firstname" maxLength={50} minLength={2} />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" name="lastname" maxLength="50" minLength="2" />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label>Mobile Number</label>
+                        <input type="text" disabled value="9777729450" class="form-control" name="mobile" maxLength="50"
+                            minLength="2" />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-primary w-25" type="button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

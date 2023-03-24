@@ -1,0 +1,39 @@
+.loginForms {
+  display: flex;
+  height: 618.5px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.loginForm {
+  -webkit-box-shadow: -1px -8px 33px 0px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: -1px -8px 33px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: -1px -8px 33px 0px rgba(0, 0, 0, 0.39);
+  height: 280px;
+  width: 600px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.otp {
+  text-align: center;
+  width: 40px;
+  margin-right: 8px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:invalid {
+  border: 3px solid red;
+}
+input:valid {
+  border: 3px solid green;
+}
