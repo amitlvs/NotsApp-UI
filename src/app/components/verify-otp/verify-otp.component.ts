@@ -1,10 +1,10 @@
 import { Router } from '@angular/router';
-import { OtpServiceService } from './../../services/otp-service.service';
+import { OtpServiceService } from '../../../services/otp-service.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-verify-otp',
+  selector: 'notsapp-verify-otp',
   templateUrl: './verify-otp.component.html',
   styleUrls: ['./verify-otp.component.css'],
 })
