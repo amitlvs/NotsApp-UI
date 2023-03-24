@@ -46,8 +46,6 @@ export class ProfileComponent implements OnInit {
     });
   }
   handleUpload(e: any) {
-    console.log(e.target.files[0]);
-
     const file = e.target.files[0];
     // const params = {
     //   ACL: 'public-read',
@@ -57,9 +55,7 @@ export class ProfileComponent implements OnInit {
     // };
     // this.myS3Bucket.upload(params, (err: any, ec2data: any) => {
     //   if (err) {
-    //     console.log(err);
     //   }
-    //   console.log(ec2data);
     //   this.profileDefault = ec2data.Location;
     // });
     const profile = URL.createObjectURL(file);
@@ -71,14 +67,10 @@ export class ProfileComponent implements OnInit {
     this.profileDefault = PROFILE_DEFAULT;
   }
   ngOnInit(): void {
-    // console.log(S3);
-
     // S3.config.update({
     //   accessKeyId: this.ANGULAR_APP_ACCESS_KEY,
     //   secretAccessKey: this.ANGULAR_APP_SECRET_KEY,
     // });
-    console.log(this.awsConfig);
-    console.log(this.S3CustomClient);
 
     let data = localStorage.getItem('userData');
     if (data) {
@@ -91,25 +83,19 @@ export class ProfileComponent implements OnInit {
     }
   }
   uploadImage() {
-    console.log('dhuh');
     // $(document).ready(function() {
-
     //   var readURL = function(input) {
     //       if (input.files && input.files[0]) {
     //           var reader = new FileReader();
-
     //           reader.onload = function (e) {
     //               $('.profile-pic').attr('src', e.target.result);
     //           }
-
     //           reader.readAsDataURL(input.files[0]);
     //       }
     //   }
-
     //   $(".file-upload").on('change', function(){
     //       readURL(this);
     //   });
-
     //   $(".upload-button").on('click', function() {
     //      $(".file-upload").click();
     //   });

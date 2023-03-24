@@ -16,7 +16,11 @@ export class SendOtpComponent implements Validators {
   btnText: String = 'Send Otp';
   btnDisabled: boolean = true;
   submitted!: boolean;
-  constructor(private fb: FormBuilder, private router: Router,private otpService:OtpServiceService) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private otpService: OtpServiceService
+  ) {
     this.loginForm = this.fb.group({
       phnumber: [this.phNumber],
       ph1: [null, [Validators.required, Validators.maxLength(1)]],
@@ -30,7 +34,6 @@ export class SendOtpComponent implements Validators {
       ph9: [null, [Validators.required, Validators.maxLength(1)]],
       ph10: [null, [Validators.required, Validators.maxLength(1)]],
     });
-   
   }
   onLogin() {
     if (this.loginForm.valid) {
@@ -49,24 +52,18 @@ export class SendOtpComponent implements Validators {
           this.loginForm.controls['ph9'].value +
           this.loginForm.controls['ph10'].value
       );
-      console.log(this.loginForm.value);
-      this.phNumber = this.loginForm.controls['phnumber'].value 
-      this.otpService.getOtp(this.phNumber).subscribe(res => {
-        console.log(res);
-        if(res){
+      this.phNumber = this.loginForm.controls['phnumber'].value;
+      this.otpService.getOtp(this.phNumber).subscribe((res) => {
+        if (res) {
           this.otpService.numberOtp.next(res);
-        localStorage.setItem('userData',JSON.stringify(res))
-
-          this.router.navigateByUrl('verifyOtp')
-        }else{
-          console.warn("You have not satisfied the criteria");
-          
+          localStorage.setItem('userData', JSON.stringify(res));
+          this.router.navigateByUrl('verifyOtp');
+        } else {
+          console.warn('You have not satisfied the criteria');
         }
-        
-      })
-      
+      });
     } else if (this.loginForm.invalid) {
-      console.log('hoja lvde');
+      console.error('Check Form Values');
     }
   }
   tabChange(val: any) {
@@ -92,13 +89,12 @@ export class SendOtpComponent implements Validators {
     }
   }
 
-  pasteValue(e:any,input:any){
-    console.log(e);
-    let elsInput = document.querySelectorAll("input");
-    const clip = e.clipboardData.getData('text');     // Get clipboard data
-    const pin = clip.replace(/\s/g, "");               // Sanitize string
-    const ch = [...pin];                               // Create array of chars
-    elsInput.forEach((el, i) => el.value = ch[i]??""); // Populate inputs
-    elsInput[pin.length - 1].focus(); 
+  pasteValue(e: any, input: any) {
+    let elsInput = document.querySelectorAll('input');
+    const clip = e.clipboardData.getData('text'); // Get clipboard data
+    const pin = clip.replace(/\s/g, ''); // Sanitize string
+    const ch = [...pin]; // Create array of chars
+    elsInput.forEach((el, i) => (el.value = ch[i] ?? '')); // Populate inputs
+    elsInput[pin.length - 1].focus();
   }
 }
