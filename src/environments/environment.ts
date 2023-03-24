@@ -1,0 +1,6 @@
+export const environment = {
+  ANGULAR_APP_S3_BUCKET: 'notsapp2',
+  ANGULAR_APP_ACCESS_KEY: 'AKIAYQQGQWSAA2GEZA7W',
+  ANGULAR_APP_SECRET_KEY: '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',
+  ANGULAR_APP_REGION: 'ap-south-1',
+};

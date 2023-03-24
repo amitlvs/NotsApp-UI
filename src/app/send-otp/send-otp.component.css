@@ -18,6 +18,7 @@
   justify-content: center;
 }
 .otp {
+  text-align: center;
   width: 40px;
   margin-right: 8px;
 }
@@ -32,4 +33,7 @@ input[type="number"] {
 
 input:invalid {
   border: 3px solid red;
+}
+input:valid {
+  border: 3px solid green;
 }

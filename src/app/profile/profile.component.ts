@@ -1,7 +1,9 @@
+import { environment } from './../../environments/environment.development';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { PROFILE_DEFAULT, VERIFIED_ICON } from '../constants/image-constants';
 import { DomSanitizer } from '@angular/platform-browser';
+import AWSS3UploadAshClient from 'aws-s3-upload-ash';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -15,6 +17,27 @@ export class ProfileComponent implements OnInit {
   profileForm!: FormGroup;
   profileDefault: any = PROFILE_DEFAULT;
   verifiedIcon = VERIFIED_ICON;
+  // ANGULAR_APP_S3_BUCKET = 'notsapp2';
+  // ANGULAR_APP_ACCESS_KEY = 'AKIAYQQGQWSAA2GEZA7W';
+  // ANGULAR_APP_SECRET_KEY = '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';
+  // ANGULAR_APP_REGION = 'ap-south-1';
+  awsConfig: any = {
+    bucketName: environment.ANGULAR_APP_S3_BUCKET,
+    dirName: 'media',
+    region: environment.ANGULAR_APP_REGION,
+    accessKeyId: environment.ANGULAR_APP_ACCESS_KEY,
+    secretAccessKey: environment.ANGULAR_APP_SECRET_KEY,
+  };
+  S3CustomClient: AWSS3UploadAshClient = new AWSS3UploadAshClient(
+    this.awsConfig
+  );
+
+  // myS3Bucket = new S3({
+  //   params: {
+  //     Bucket: this.ANGULAR_APP_S3_BUCKET,
+  //   },
+  //   region: this.ANGULAR_APP_REGION,
+  // });
   constructor(private fb: FormBuilder, private sanitizer: DomSanitizer) {
     this.profileForm = this.fb.group({
       userName: [''],
@@ -26,6 +49,19 @@ export class ProfileComponent implements OnInit {
     console.log(e.target.files[0]);
 
     const file = e.target.files[0];
+    // const params = {
+    //   ACL: 'public-read',
+    //   Body: file,
+    //   Bucket: this.ANGULAR_APP_S3_BUCKET,
+    //   Key: `${file.name}-${Date.now()}`,
+    // };
+    // this.myS3Bucket.upload(params, (err: any, ec2data: any) => {
+    //   if (err) {
+    //     console.log(err);
+    //   }
+    //   console.log(ec2data);
+    //   this.profileDefault = ec2data.Location;
+    // });
     const profile = URL.createObjectURL(file);
     // to sanitise the url if it's unsafe
     let sanitizedUrl = this.sanitizer.bypassSecurityTrustUrl(profile);
@@ -35,6 +71,15 @@ export class ProfileComponent implements OnInit {
     this.profileDefault = PROFILE_DEFAULT;
   }
   ngOnInit(): void {
+    // console.log(S3);
+
+    // S3.config.update({
+    //   accessKeyId: this.ANGULAR_APP_ACCESS_KEY,
+    //   secretAccessKey: this.ANGULAR_APP_SECRET_KEY,
+    // });
+    console.log(this.awsConfig);
+    console.log(this.S3CustomClient);
+
     let data = localStorage.getItem('userData');
     if (data) {
       this.userData = JSON.parse(data);
