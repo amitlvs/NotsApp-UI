@@ -13,6 +13,7 @@ import { SendOtpComponent } from './components/send-otp/send-otp.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AtCustomLibModule } from 'at-custom-lib';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AtCustomLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
